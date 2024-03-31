@@ -1,7 +1,7 @@
 package org.example
 
 class Catalogo {
-    private val libros = mutableListOf<Libro>()
+    val libros = mutableListOf<Libro>()
 
     fun agregarLibro(libro: Libro) {
         libros.add(libro)
@@ -15,7 +15,7 @@ class Catalogo {
         return libros.find { it.id == id }
     }
 
-    fun librosPorEstado(estado: String): List<Libro> {
+    fun librosPorEstado(estado: EstadoLibro): List<Libro> {
         return libros.filter { it.estado == estado }
     }
 

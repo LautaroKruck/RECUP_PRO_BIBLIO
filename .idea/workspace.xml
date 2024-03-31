@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30252684-39da-4dc4-a8b6-26205e204fa6" name="Changes" comment="Ejer 2">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/EstadoLibro.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/RegistroPrestamos.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Catalogo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Catalogo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/GestorBiblioteca.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GestorBiblioteca.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Libro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Libro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +40,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2eSZ7p9IifhDIuXdSXrKazzhtAl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,22 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Gradle.Build RECUP_PRO_BIBLIO.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Ejercicio-3",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lauta/OneDrive/Documentos/REPOSITORIOS/RECUP_PRO_BIBLIO",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Build RECUP_PRO_BIBLIO.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ejercicio-3&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lauta/OneDrive/Documentos/REPOSITORIOS/RECUP_PRO_BIBLIO&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lauta\OneDrive\Documentos\REPOSITORIOS\RECUP_PRO_BIBLIO" />

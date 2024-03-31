@@ -1,7 +1,7 @@
 package org.example
 
 class GestorBiblioteca {
-    private val catalogo = Catalogo()
+    val catalogo = Catalogo()
     private val usuarios = mutableListOf<Usuario>()
     private val registroPrestamos = RegistroPrestamos()
 
@@ -15,11 +15,15 @@ class GestorBiblioteca {
         catalogo.eliminarLibro(id)
     }
 
-    fun registrarPrestamo(id: String) {
-        val libro = catalogo.buscarLibro(id)
-        if (libro != null && libro.estado == "disponible") {
-            libro.estado = "prestado"
-            registroPrestamos.add(libro)
+    fun registrarPrestamo(idLibro: String, idUsuario: String) {
+        val libro = catalogo.buscarLibro(idLibro)
+        val usuario = usuarios.find { it.id == idUsuario }
+
+        if (libro != null && usuario != null && libro.estado == EstadoLibro.DISPONIBLE) {
+            libro.prestar()
+            registroPrestamos.registrarPrestamo(libro, usuario) // Asumiendo que este método ya está implementado para manejar el registro
+        } else {
+            println("No se puede registrar el préstamo.")
         }
     }
 
@@ -40,16 +44,19 @@ class GestorBiblioteca {
     }
 
     fun consultarDisponibilidad(id: String): String {
-        return catalogo.buscarLibro(id)?.estado ?: "Libro no encontrado"
+        val libro = catalogo.buscarLibro(id)
+        return libro?.estado?.descripcion ?: "Libro no encontrado"
     }
 
-    fun librosPorEstado(estado: String): List<Libro> {
+
+    fun librosPorEstado(estado: EstadoLibro): List<Libro> {
         return catalogo.librosPorEstado(estado)
     }
 
     fun todosLosLibros() {
         catalogo.todosLosLibros().forEach { libro ->
-            println("ID: ${libro.id}, Título: ${libro.titulo}, Autor: ${libro.autor}, Año: ${libro.añoPublicacion}, Temática: ${libro.tematica}, Estado: ${libro.estado}")
+            println(libro.consultarDatos())
         }
     }
+
 }

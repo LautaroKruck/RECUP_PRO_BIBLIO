@@ -10,4 +10,7 @@ fun main() {
 
     // Mostrar el estado actual de los libros con sus ID únicos.
     gestor.todosLosLibros()
+
+    // Consultar disponibilidad
+    println("Estado de 'Libro Uno': ${gestor.consultarDisponibilidad("1")}")
 }
