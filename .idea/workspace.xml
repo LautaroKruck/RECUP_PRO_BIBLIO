@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30252684-39da-4dc4-a8b6-26205e204fa6" name="Changes" comment="Ejer 1">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/UtilidadesBiblioteca.kt" afterDir="false" />
+    <list default="true" id="30252684-39da-4dc4-a8b6-26205e204fa6" name="Changes" comment="Ejer 2">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/EstadoLibro.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/RegistroPrestamos.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/GestorBiblioteca.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GestorBiblioteca.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Libro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Libro.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -32,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Ejercicio-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Ejercicio-2",
+    "git-widget-placeholder": "Ejercicio-3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lauta/OneDrive/Documentos/REPOSITORIOS/RECUP_PRO_BIBLIO",
     "project.structure.last.edited": "Problems",
@@ -96,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711900829567</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ejer 2">
+      <option name="closed" value="true" />
+      <created>1711909940538</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711909940538</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,7 +119,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Ejercicio-2" />
+                        <option value="Ejercicio-3" />
                       </list>
                     </value>
                   </entry>
@@ -125,6 +134,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Ejer 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejer 1" />
+    <MESSAGE value="Ejer 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejer 2" />
   </component>
 </project>

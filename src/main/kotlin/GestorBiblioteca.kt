@@ -2,7 +2,8 @@ package org.example
 
 class GestorBiblioteca {
     private val catalogo = Catalogo()
-    private val registroPrestamos = mutableListOf<Libro>()
+    private val usuarios = mutableListOf<Usuario>()
+    private val registroPrestamos = RegistroPrestamos()
 
     fun agregarLibro(titulo: String, autor: String, añoPublicacion: Int, tematica: String) {
         val idUnico = UtilidadesBiblioteca.generarIdentificadorUnico()
@@ -22,12 +23,20 @@ class GestorBiblioteca {
         }
     }
 
-    fun devolverLibro(id: String) {
-        val libro = registroPrestamos.find { it.id == id }
-        libro?.let {
-            it.estado = "disponible"
-            registroPrestamos.remove(it)
+    fun registrarUsuario(usuario: Usuario) {
+        usuarios.add(usuario)
+    }
+
+    fun prestarLibro(libro: Libro, usuario: Usuario) {
+        if (libro.estaDisponible()) {
+            registroPrestamos.registrarPrestamo(libro, usuario)
+            libro.prestar()
         }
+    }
+
+    fun devolverLibro(libro: Libro, usuario: Usuario) {
+        registroPrestamos.devolverLibro(libro, usuario)
+        libro.devolver()
     }
 
     fun consultarDisponibilidad(id: String): String {
