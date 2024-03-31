@@ -13,7 +13,7 @@
 
 ¡Bienvenidos a esta emocionante actividad individual de programación orientada a objetos (POO)! Vamos a embarcarnos en la creación de un **Sistema de Gestión de Biblioteca** utilizando Kotlin, un lenguaje moderno y poderoso que nos permitirá aplicar y profundizar en nuestros conocimientos de POO de manera práctica y efectiva.
 
-En este sistema, seremos capaces de gestionar y realizar préstamos de **libros** y otros elementos que exploraremos más adelante. El objetivo es desarrollar un sistema que no solo sea funcional sino también eficiente, escalable y fácil de mantener.
+En este sistema, seremos capaces de gestionar y realizar préstamos de **libros** y otros elementos que exploraremos más adelante. El objetivo es desarrollar un sistema que no solo sea funcional, sino también eficiente, escalable y fácil de mantener.
 
 **Interacción y Usabilidad**: Para verificar el correcto funcionamiento del sistema y facilitar la interacción con el mismo, implementaremos un **menú de usuario**. Este menú incorporará todas las acciones posibles del sistema, permitiendo al usuario interactuar de manera clara y eficaz.
 
@@ -29,7 +29,7 @@ Para llevar a cabo este proyecto, trabajaremos con varios **conceptos clave** qu
 
 ### **1.2 Evolución y Optimización del Sistema**
 
-A lo largo de este proyecto, no solo estableceremos las bases funcionales de nuestro sistema sino que también lo expandiremos y optimizaremos mediante:
+A lo largo de este proyecto, no solo estableceremos las bases funcionales de nuestro sistema, sino que también lo expandiremos y optimizaremos mediante:
 
 - La integración de **métodos estáticos** y el aprovechamiento de **clases genéricas**, lo que nos permitirá manejar diversos tipos de elementos de manera más eficiente.
 - La aplicación de principios de **herencia, clases abstractas e interfaces** para construir una arquitectura de software robusta y extensible.
@@ -38,12 +38,12 @@ A lo largo de este proyecto, no solo estableceremos las bases funcionales de nue
 
 A medida que desarrollamos nuestro sistema, deberemos seguir varias buenas prácticas para asegurar la calidad y la comprensión del código:
 
-- **Comentarios y Documentación**: Es vital comentar adecuadamente aquellos puntos del código que contengan lógica compleja o crítica. Esto no solo ayuda en el proceso de depuración sino que también facilita el mantenimiento y la extensibilidad del sistema.
+- **Comentarios y Documentación**: Es vital comentar adecuadamente aquellos puntos del código que contengan lógica compleja o crítica. Esto no solo ayuda en el proceso de depuración, sino que también facilita el mantenimiento y la extensibilidad del sistema.
 - **Separación de Responsabilidades**: La salida a consola debe estar estrictamente separada de la lógica de gestión de la biblioteca. Evitaremos colocar **`println`** directamente en las clases que no tienen esa responsabilidad. En su lugar, utilizaremos mecanismos de **log** en clases específicamente diseñadas para interactuar con el usuario, manteniendo así nuestro código limpio y bien organizado.
 
 ### **1.4 Trabajo en Ramas**
 
-El proyecto esta formado de un conjunto de ejercicios que evolucionará el sistema en base a las especificaciones. Cada ejercicio se trabajará  en **ramas separadas**, permitiendo una organización clara y facilitando la revisión del trabajo realizado. Los nombres de las ramas seguirán el patrón **ejercicio-N**, donde **N** es el número del ejercicio, ayudando a mantener una estructura ordenada y coherente en el repositorio.
+El proyecto está formado de un conjunto de ejercicios que evolucionará el sistema en base a las especificaciones. Cada ejercicio se trabajará en **ramas separadas**, permitiendo una organización clara y facilitando la revisión del trabajo realizado. Los nombres de las ramas seguirán el patrón **ejercicio-N**, donde **N** es el número del ejercicio, ayudando a mantener una estructura ordenada y coherente en el repositorio.
 
 ## 2. Ejercicios
 
@@ -52,24 +52,24 @@ El proyecto esta formado de un conjunto de ejercicios que evolucionará el siste
 **Criterio global asociado**: 1. Instancia objetos y hacer uso de ellos.
 
 **Contexto del Ejercicio**:
-Desarrollar un sistema simple de gestión para una biblioteca que permita gestionar y realizar prestamos de libros y otros elementos que veremos mas adelante. Este sistema debe permitir agregar/eliminar libros a un catálogo, registrar préstamos/devoluciones de libros a usuarios y consultar el estado actual de un libro (`**disponible**` o `**prestado**`).
+Desarrollar un sistema simple de gestión para una biblioteca que permita gestionar y realizar préstamos de libros y otros elementos que veremos más adelante. Este sistema debe permitir agregar/eliminar libros a un catálogo, registrar préstamos/devoluciones de libros a usuarios y consultar el estado actual de un libro (`**disponible**` o `**prestado**`).
 
 **Especificaciones**:
 
-1. **Clase `Libro`**:  solo contendrá datos, sin ninguna lógica asociada.
+1. **Clase `Libro`**: solo contendrá datos, sin ninguna lógica asociada.
 
 - Algunos de los datos que contendrá: Id, título, autor, año de publicación, temática, y estado (disponible o prestado).
 - Se debe poder inicializar las propiedades del libro, y no pueden ser vacías. El estado inicial de cualquier libro al incorporarse a la biblioteca es `**disponible**`.
 
-1. **Clase `GestorBiblioteca`**: Contendrá la lógica para gestionar los libros, integrará el **(1) catalogo** y  el **(2) registro de prestamos**. Sobre estas dos clases hablaremos a lo largo de los ejercicios e irán evolucionando la implementación de ellas.
+1. **Clase `GestorBiblioteca`**: Contendrá la lógica para gestionar los libros, integrará el **(1) catálogo** y el **(2) registro de préstamos**. Sobre estas dos clases hablaremos a lo largo de los ejercicios e irán evolucionando la implementación de ellas.
 
    - **Propiedades**:
-     - Catalogo de libros (o cualquier otro elemento que se gestione) en la biblioteca. El catalogo de libro se inicializa sin libros, y posteriormente se incorporan.
-     - El Registro de prestamos de los elementos del catálogo. Igualmente, el registro de prestamos se inicializa sin registros, y posteriormente se incorporan.
+     - Catálogo de libros (o cualquier otro elemento que se gestione) en la biblioteca. El catálogo de libro se inicializa sin libros, y posteriormente se incorporan.
+     - El Registro de préstamos de los elementos del catálogo. Igualmente, el registro de préstamos se inicializa sin registros, y posteriormente se incorporan.
    - **Métodos**:
      - Agregar un libro al catálogo.
      - Eliminar un libro del catálogo.
-     - Registrar un préstamo (cambia el estado del libro a prestado si está disponible).
+     - Registrar un préstamo (cambia el estado del libro ha prestado si está disponible).
      - Devolver un libro (cambia el estado del libro a disponible).
      - Consultar disponibilidad de un libro.
      - Retornar los libros en función de su estado (todos, disponibles y prestados).
@@ -77,7 +77,7 @@ Desarrollar un sistema simple de gestión para una biblioteca que permita gestio
 
    - Instanciar una **`GestorBiblioteca:`**
    - Agregar al menos tres libros al catálogo.
-   - Realizar al menos dos préstamo y dos devoluciones. Tanto un préstamo, como una devolución tiene que ser errónea, debido al estado del libro.
+   - Realizar al menos dos préstamos y dos devoluciones. Tanto un préstamo, como una devolución tiene que ser errónea, debido al estado del libro.
    - Mostrar el estado actual de los libros.
 
    Recomendación implementar un **menú de usuario**. Este menú incorporará todas las acciones posibles que se vayan incorporando al sistema, permitiendo al usuario interactuar de manera clara y eficaz y facilitar las pruebas.
@@ -150,7 +150,7 @@ Refactorizar y extender el sistema de gestión de biblioteca existente para inco
 **Especificaciones**:
 
 1. **Introducción de Clases Abstractas e Interfaces**:
-   - **`ElementoBiblioteca` (Clase Abstracta)**: Crear una clase abstracta **`ElementoBiblioteca`** que defina propiedades y métodos comunes a todos los elementos de una biblioteca (como libros, revistas, DVDs). Esto puede incluir identificador, título, y estado (`**disponible**` o `**prestado**`)..
+   - **`ElementoBiblioteca` (Clase Abstracta)**: Crear una clase abstracta **`ElementoBiblioteca`** que defina propiedades y métodos comunes a todos los elementos de una biblioteca (como libros, revistas, DVDs). Esto puede incluir identificador, título, y estado (`**disponible**` o `**prestado**`).
    - **`Prestable` (Interface)**: Definir una interfaz **`Prestable`** que especifique los métodos **`prestar()`** y **`devolver()`**. Asegurar que la clase **`Libro`** implemente esta interfaz, lo que garantiza que todos los tipos de elementos que puedan ser prestados cumplan con estos métodos.
 2. **Refactorización de `GestorBiblioteca` para Inyección de Dependencias**:
    - **`IGestorPrestamos` (Interface)**: Crear una interfaz **`IGestorPrestamos`** que defina los métodos necesarios para gestionar préstamos (registrar prestamo/devolución, consultar historial, etc.). La clase **`RegistroPrestamos`** debe implementar esta interfaz. Ten en cuenta que puede que ya los tengas implementados, por tanto tendrias que refactorizar.
@@ -165,7 +165,7 @@ Refactorizar y extender el sistema de gestión de biblioteca existente para inco
 
 **Programa Principal**:
 
-- Demostrar la creación de  elementos de biblioteca (libros, revistas, DVDs) que hereden de **`ElementoBiblioteca`** y/o implementen la interfaz **`Prestable`**.
+- Demostrar la creación de elementos de biblioteca (libros, revistas, DVDs) que hereden de **`ElementoBiblioteca`** y/o implementen la interfaz **`Prestable`**.
 - Instanciar **`GestorBiblioteca`** pasando una instancia de **`RegistroPrestamos`** (que implementa **`IGestorPrestamos`**) para demostrar la inyección de dependencias.
 - Realizar operaciones de préstamo y devolución, asegurando que el sistema maneja correctamente los elementos.
 
@@ -178,9 +178,9 @@ Refinar el sistema de gestión de biblioteca existente mediante la introducción
 
 **Especificaciones**:
 
-1. **Clase Genérica `GestorElementos<T>`**: Ten en cuenta que esta clase se utilizará para implementar el catalogo, por tanto es posible que ya tengas alguna lógica implementada de alguna manera, y necesites refactorizar.
+1. **Clase Genérica `GestorElementos<T>`**: Ten en cuenta que esta clase se utilizará para implementar el catálogo, por tanto es posible que ya tengas alguna lógica implementada de alguna manera, y necesites refactorizar.
    - Crear una clase genérica **`GestorElementos<T>`** que pueda utilizarse para gestionar distintos tipos de elementos, donde **`T`** puede ser cualquier clase que derive de **`ElementoBiblioteca`** (como **`Libro`**, **`Revista`**, **`DVD`**, etc.).
-   - **Funcionalidades**: Posiblemente ya lo tengas implementado, consistirá en refactorizar. Los métodos podrían ser por ejemplo:
+   - **Funcionalidades**: Posiblemente, ya lo tengas implementado, consistirá en refactorizar. Los métodos podrían ser por ejemplo:
      - Agregar elementos al gestor de elementos.
      - Eliminar elementos por identificador del gestor de elementos.
      - Retornar los elementos gestionados.

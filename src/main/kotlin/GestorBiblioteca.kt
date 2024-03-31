@@ -4,8 +4,10 @@ class GestorBiblioteca {
     private val catalogo = Catalogo()
     private val registroPrestamos = mutableListOf<Libro>()
 
-    fun agregarLibro(libro: Libro) {
-        catalogo.agregarLibro(libro)
+    fun agregarLibro(titulo: String, autor: String, añoPublicacion: Int, tematica: String) {
+        val idUnico = UtilidadesBiblioteca.generarIdentificadorUnico()
+        val nuevoLibro = Libro(idUnico, titulo, autor, añoPublicacion, tematica)
+        catalogo.agregarLibro(nuevoLibro)
     }
 
     fun eliminarLibro(id: String) {
@@ -34,5 +36,11 @@ class GestorBiblioteca {
 
     fun librosPorEstado(estado: String): List<Libro> {
         return catalogo.librosPorEstado(estado)
+    }
+
+    fun todosLosLibros() {
+        catalogo.todosLosLibros().forEach { libro ->
+            println("ID: ${libro.id}, Título: ${libro.titulo}, Autor: ${libro.autor}, Año: ${libro.añoPublicacion}, Temática: ${libro.tematica}, Estado: ${libro.estado}")
+        }
     }
 }
