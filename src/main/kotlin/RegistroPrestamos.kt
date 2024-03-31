@@ -1,27 +1,24 @@
 package org.example
 
 interface IGestorPrestamos {
-    fun registrarPrestamo(libro: Libro, usuario: Usuario)
-    fun devolverLibro(libro: Libro, usuario: Usuario)
-    // Métodos adicionales según sea necesario
+    fun registrarPrestamo(elemento: ElementoBiblioteca, usuario: Usuario)
+    fun devolverLibro(elemento: ElementoBiblioteca, usuario: Usuario)
 }
 
-class RegistroPrestamos : IGestorPrestamos{
-    private val prestamosActuales = mutableListOf<Libro>()
-    private val historialPrestamos = mutableListOf<Pair<Libro, Usuario>>()
+class RegistroPrestamos : IGestorPrestamos {
+    private val prestamosActuales = mutableListOf<Pair<ElementoBiblioteca, Usuario>>()
 
-    override fun registrarPrestamo(libro: Libro, usuario: Usuario) {
-        prestamosActuales.add(libro)
-        historialPrestamos.add(libro to usuario)
-        usuario.agregarLibroPrestado(libro)
+    override fun registrarPrestamo(elemento: ElementoBiblioteca, usuario: Usuario) {
+        if (elemento.estado == EstadoLibro.DISPONIBLE) {
+            elemento.estado = EstadoLibro.PRESTADO
+            prestamosActuales.add(elemento to usuario)
+        }
     }
 
-    override fun devolverLibro(libro: Libro, usuario: Usuario) {
-        prestamosActuales.remove(libro)
-        usuario.quitarLibroPrestado(libro)
+    override fun devolverLibro(elemento: ElementoBiblioteca, usuario: Usuario) {
+        if (elemento.estado == EstadoLibro.PRESTADO) {
+            elemento.estado = EstadoLibro.DISPONIBLE
+            prestamosActuales.removeIf { it.first == elemento && it.second == usuario }
+        }
     }
-
-    fun historialDeUnLibro(libro: Libro): List<Pair<Libro, Usuario>> = historialPrestamos.filter { it.first == libro }
-
-    fun historialDeUnUsuario(usuario: Usuario): List<Libro> = usuario.librosPrestados()
 }

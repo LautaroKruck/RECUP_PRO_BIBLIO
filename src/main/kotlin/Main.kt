@@ -1,15 +1,17 @@
 package org.example
 
 fun main() {
-    // Instanciar las dependencias
+    // Inicialización de las dependencias del sistema de gestión de la biblioteca
     val catalogo = Catalogo()
     val registroPrestamos = RegistroPrestamos()
     val gestorBiblioteca = GestorBiblioteca(catalogo, registroPrestamos)
 
-    // Crear y agregar algunos libros al catálogo
-    gestorBiblioteca.agregarLibro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605, "Novela")
-    gestorBiblioteca.agregarLibro("Cien años de soledad", "Gabriel García Márquez", 1967, "Realismo mágico")
-    gestorBiblioteca.agregarLibro("La odisea", "Homero", -800, "Épica")
+    // Crear y agregar algunos elementos al catálogo
+    val libro1 = Libro("1", "Don Quijote de la Mancha", "Miguel de Cervantes", 1605, "Novela", EstadoLibro.DISPONIBLE)
+    val libro2 = Libro("2", "Cien años de soledad", "Gabriel García Márquez", 1967, "Realismo mágico", EstadoLibro.DISPONIBLE)
+
+    gestorBiblioteca.agregarElemento(libro1)
+    gestorBiblioteca.agregarElemento(libro2)
 
     // Registrar usuarios
     val usuario1 = Usuario("U1", "Juan Pérez")
@@ -17,21 +19,21 @@ fun main() {
     gestorBiblioteca.registrarUsuario(usuario1)
     gestorBiblioteca.registrarUsuario(usuario2)
 
-    // Mostrar todos los libros antes de los préstamos
-    println("Libros en el catálogo antes de los préstamos:")
-    gestorBiblioteca.todosLosLibros()
+    // Realizar préstamos
+    println("Realizando préstamos...")
+    gestorBiblioteca.registrarPrestamo(libro1.id, usuario1.id)
+    gestorBiblioteca.registrarPrestamo(libro2.id, usuario2.id)
 
-    // Realizar algunos préstamos
-    println("\nRealizando préstamos...")
-    gestorBiblioteca.registrarPrestamo(catalogo.libros[0].id, usuario1.id) // Asume que el ID de libro es accesible y correcto.
-    gestorBiblioteca.registrarPrestamo(catalogo.libros[1].id, usuario2.id)
+    // Mostrar todos los elementos después de los préstamos
+    println("\nElementos en el catálogo después de realizar los préstamos:")
+    gestorBiblioteca.mostrarTodosLosElementos()
 
-    // Mostrar todos los libros después de los préstamos
-    println("\nLibros en el catálogo después de los préstamos:")
-    gestorBiblioteca.todosLosLibros()
+    // Devolver libros
+    println("\nDevolviendo libros...")
+    gestorBiblioteca.devolverElemento(libro1.id, usuario1.id)
+    gestorBiblioteca.devolverElemento(libro2.id, usuario2.id)
 
-
-    // Mostrar el estado final de los libros
-    println("\nEstado final de los libros después de las devoluciones:")
-    gestorBiblioteca.todosLosLibros()
+    // Estado final de todos los elementos
+    println("\nEstado final de todos los elementos después de las devoluciones:")
+    gestorBiblioteca.mostrarTodosLosElementos()
 }

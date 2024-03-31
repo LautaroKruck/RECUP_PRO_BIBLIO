@@ -1,25 +1,26 @@
 package org.example
 
 class Catalogo {
-    val libros = mutableListOf<Libro>()
+    private val elementos = mutableListOf<ElementoBiblioteca>()
 
-    fun agregarLibro(libro: Libro) {
-        libros.add(libro)
+    fun agregarElemento(elemento: ElementoBiblioteca) {
+        elementos.add(elemento)
     }
 
-    fun eliminarLibro(id: String) {
-        libros.removeIf { it.id == id }
+    fun eliminarElemento(id: String) {
+        elementos.removeIf { it.id == id }
     }
 
-    fun buscarLibro(id: String): Libro? {
-        return libros.find { it.id == id }
+    fun buscarElementoPorId(id: String): ElementoBiblioteca? {
+        return elementos.find { it.id == id }
     }
 
-    fun librosPorEstado(estado: EstadoLibro): List<Libro> {
-        return libros.filter { it.estado == estado }
+    fun elementosPorEstado(estado: EstadoLibro): List<ElementoBiblioteca> {
+        return elementos.filter { it.estado == estado }
     }
 
-    fun todosLosLibros(): List<Libro> {
-        return libros.toList()
+    fun todosLosElementos(): List<ElementoBiblioteca> {
+        return elementos.toList()
     }
 }
+

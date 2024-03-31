@@ -2,60 +2,28 @@ package org.example
 
 class GestorBiblioteca(private val catalogo: Catalogo, private val gestorPrestamos: IGestorPrestamos) {
     private val usuarios = mutableListOf<Usuario>()
-    private val registroPrestamos = RegistroPrestamos()
 
-    fun agregarLibro(titulo: String, autor: String, añoPublicacion: Int, tematica: String) {
-        val idUnico = UtilidadesBiblioteca.generarIdentificadorUnico()
-        val nuevoLibro = Libro(idUnico, titulo, autor, añoPublicacion, tematica)
-        catalogo.agregarLibro(nuevoLibro)
-    }
+    fun agregarElemento(elemento: ElementoBiblioteca) = catalogo.agregarElemento(elemento)
 
-    fun eliminarLibro(id: String) {
-        catalogo.eliminarLibro(id)
-    }
-
-    fun registrarPrestamo(idLibro: String, idUsuario: String) {
-        val libro = catalogo.buscarLibro(idLibro)
+    fun registrarPrestamo(idElemento: String, idUsuario: String) {
+        val elemento = catalogo.buscarElementoPorId(idElemento)
         val usuario = usuarios.find { it.id == idUsuario }
 
-        if (libro != null && usuario != null && libro.estado == EstadoLibro.DISPONIBLE) {
-            libro.prestar()
-            registroPrestamos.registrarPrestamo(libro, usuario) // Asumiendo que este método ya está implementado para manejar el registro
-        } else {
-            println("No se puede registrar el préstamo.")
+        if (elemento != null && usuario != null && elemento is Prestable) {
+            gestorPrestamos.registrarPrestamo(elemento, usuario)
         }
     }
 
-    fun registrarUsuario(usuario: Usuario) {
-        usuarios.add(usuario)
-    }
+    fun devolverElemento(idElemento: String, idUsuario: String) {
+        val elemento = catalogo.buscarElementoPorId(idElemento)
+        val usuario = usuarios.find { it.id == idUsuario }
 
-    fun prestarLibro(libro: Libro, usuario: Usuario) {
-        if (libro.estaDisponible()) {
-            registroPrestamos.registrarPrestamo(libro, usuario)
-            libro.prestar()
+        if (elemento != null && usuario != null && elemento is Prestable) {
+            gestorPrestamos.devolverLibro(elemento, usuario)
         }
     }
 
-    fun devolverLibro(libro: Libro, usuario: Usuario) {
-        registroPrestamos.devolverLibro(libro, usuario)
-        libro.devolver()
-    }
+    fun mostrarTodosLosElementos() = catalogo.todosLosElementos().forEach { println(it.consultarDatos()) }
 
-    fun consultarDisponibilidad(id: String): String {
-        val libro = catalogo.buscarLibro(id)
-        return libro?.estado?.descripcion ?: "Libro no encontrado"
-    }
-
-
-    fun librosPorEstado(estado: EstadoLibro): List<Libro> {
-        return catalogo.librosPorEstado(estado)
-    }
-
-    fun todosLosLibros() {
-        catalogo.todosLosLibros().forEach { libro ->
-            println(libro.consultarDatos())
-        }
-    }
-
+    fun registrarUsuario(usuario: Usuario) = usuarios.add(usuario)
 }
