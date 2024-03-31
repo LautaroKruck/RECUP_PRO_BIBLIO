@@ -1,7 +1,6 @@
 package org.example
 
-class GestorBiblioteca {
-    val catalogo = Catalogo()
+class GestorBiblioteca(private val catalogo: Catalogo, private val gestorPrestamos: IGestorPrestamos) {
     private val usuarios = mutableListOf<Usuario>()
     private val registroPrestamos = RegistroPrestamos()
 

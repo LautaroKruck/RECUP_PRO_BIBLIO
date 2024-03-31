@@ -1,16 +1,22 @@
 package org.example
 
-class RegistroPrestamos {
+interface IGestorPrestamos {
+    fun registrarPrestamo(libro: Libro, usuario: Usuario)
+    fun devolverLibro(libro: Libro, usuario: Usuario)
+    // Métodos adicionales según sea necesario
+}
+
+class RegistroPrestamos : IGestorPrestamos{
     private val prestamosActuales = mutableListOf<Libro>()
     private val historialPrestamos = mutableListOf<Pair<Libro, Usuario>>()
 
-    fun registrarPrestamo(libro: Libro, usuario: Usuario) {
+    override fun registrarPrestamo(libro: Libro, usuario: Usuario) {
         prestamosActuales.add(libro)
         historialPrestamos.add(libro to usuario)
         usuario.agregarLibroPrestado(libro)
     }
 
-    fun devolverLibro(libro: Libro, usuario: Usuario) {
+    override fun devolverLibro(libro: Libro, usuario: Usuario) {
         prestamosActuales.remove(libro)
         usuario.quitarLibroPrestado(libro)
     }

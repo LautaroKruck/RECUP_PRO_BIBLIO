@@ -1,6 +1,6 @@
 package org.example
 
-class Libro(val id: String, private val titulo: String, private val autor: String, private val añoPublicacion: Int, private val tematica: String, var estado: EstadoLibro = EstadoLibro.DISPONIBLE) {
+class Libro(id: String, titulo: String, private val autor: String, private val añoPublicacion: Int, private val tematica: String, estado: EstadoLibro = EstadoLibro.DISPONIBLE) : ElementoBiblioteca(id, titulo, estado), Prestable {
 
     init {
         require(titulo.isNotEmpty()) { "El título no puede estar vacío" }
@@ -8,15 +8,18 @@ class Libro(val id: String, private val titulo: String, private val autor: Strin
         require(tematica.isNotEmpty()) { "La temática no puede estar vacía" }
     }
 
-    fun consultarDatos(): String = "ID: $id, Título: $titulo, Autor: $autor, Año: $añoPublicacion, Temática: $tematica, Estado: ${estado.descripcion}"
-
     fun estaDisponible() = estado == EstadoLibro.DISPONIBLE
 
-    fun prestar() {
-        if (estaDisponible()) estado = EstadoLibro.PRESTADO
+    override fun prestar() {
+        if (estado == EstadoLibro.DISPONIBLE) {
+            estado = EstadoLibro.PRESTADO
+        }
     }
 
-    fun devolver() {
+    override fun devolver() {
         estado = EstadoLibro.DISPONIBLE
     }
+
+    fun consultarDatos(): String = "ID: $id, Título: $titulo, Autor: $autor, Año: $añoPublicacion, Temática: $tematica, Estado: ${estado.descripcion}"
+
 }
